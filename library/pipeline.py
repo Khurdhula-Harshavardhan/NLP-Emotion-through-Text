@@ -1,4 +1,7 @@
-
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from collections import Counter
 
 class Pipeline():
     """
@@ -9,4 +12,13 @@ class Pipeline():
         - Removes stop words.
     - And then generates word embeddings.
     """
-    pass
+    stop_words:list = None 
+
+    def __init__(self) -> None:
+        try:
+            nltk.download('stopwords')
+            nltk.download('punkt')
+
+            self.stop_words = set(stopwords.words("english"))
+        except Exception as e:
+            print("[ERR] The following error occured while trying to Pre-Process the text: "+str(e))
