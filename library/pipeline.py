@@ -22,3 +22,18 @@ class Pipeline():
             self.stop_words = set(stopwords.words("english"))
         except Exception as e:
             print("[ERR] The following error occured while trying to Pre-Process the text: "+str(e))
+
+    def remove_most_frequent_stopword(self, text:str) -> str:
+        """
+        This method attempts to remove the most frequent stop words within a given sentence.
+        """
+        try:
+            # Tokenize the text
+            words = word_tokenize(text)
+
+            filtered_text = ' '.join([word for word in words if word.lower() not in self.stop_words])
+
+            return filtered_text
+        except Exception as e:
+            print("[ERR] The following error occured while trying to removing the most frequent stop words from the string: "+str(e))
+
