@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+#gotta ignore that key.
+key.json
+
 # Distribution / packaging
 .Python
 build/

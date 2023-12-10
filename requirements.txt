@@ -1,2 +1,5 @@
 nltk
 numpy
+google-generativeai
+textwrap
+pandas
